@@ -38,7 +38,12 @@ class network_obj:
             i.print_self()
 
 
-for h in nm.all_hosts():
-    temp = network_obj(h)
+def main():
+    for h in nm.all_hosts():
+        temp = network_obj(h)
 
-network_obj.print_all()
+    network_obj.print_all()
+
+
+if __name__ == '__main__':
+    main()
