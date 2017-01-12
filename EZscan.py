@@ -18,9 +18,9 @@ class network_obj:
 
         if len(nm[h]['tcp']) > 0:
             self.ports = str(list(x for x in nm[h]['tcp'].keys()))
-
-        if len(nm[h]['vendor']) > 0:
-            vendor = list(nm[h]['vendor'].values())[0]
+        
+        if len(nm[h]['vendor'].values()) > 0:
+            self.vendor = list(nm[h]['vendor'].values())[0]
 
         if len(nm[h]['osmatch']) > 0:
             self.OS = nm[h]['osmatch'][0]['osclass'][0]['osfamily']
