@@ -38,11 +38,21 @@ class network_obj:
             i.print_self()
 
 
-def main():
-    for h in nm.all_hosts():
-        temp = network_obj(h)
+from time import time
 
-    network_obj.print_all()
+
+def main():
+    start = time()
+    while time() - start < 20:
+        for h in nm.all_hosts():
+            temp = network_obj(h)
+        try:
+            network_obj.print_all()
+        except KeyError:
+            print("no response")
+        return
+    print("timed out")
+    return
 
 
 if __name__ == '__main__':
